@@ -1,0 +1,26 @@
+[project]
+name = "assistant"
+version = "0.1.0"
+description = "A CLI agent submission for Company M Oy interview"
+authors = [
+    { name = "Shamsur  Raza Chowdhury", email = "shamsur314@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "pydantic-ai-slim[openai]>=2.57.0",
+    "python-dotenv>=1.2.4",
+    "rank-bm25>=0.2.2",
+]
+
+[project.scripts]
+assistant = "assistant.main:main"
+ingest = "assistant.services:ingest"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
